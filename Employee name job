@@ -1,0 +1,65 @@
+class Employee {
+    String name, address, jobTitle;
+    double salary;
+
+    Employee(String name, String address, double salary, String jobTitle) {
+        this.name = name;
+        this.address = address;
+        this.salary = salary;
+        this.jobTitle = jobTitle;
+    }
+
+    void calculateBonus() {
+        System.out.println("Bonus: " + (0.1 * salary));
+    }
+
+    void performanceReport() {
+        System.out.println("Performance: Satisfactory");
+    }
+
+    void manageProjects() {
+        System.out.println("Managing basic tasks.");
+    }
+}
+
+class Manager extends Employee {
+    Manager(String name, String address, double salary) {
+        super(name, address, salary, "Manager");
+    }
+
+    void manageProjects() {
+        System.out.println("Managing team projects.");
+    }
+}
+
+class Developer extends Employee {
+    Developer(String name, String address, double salary) {
+        super(name, address, salary, "Developer");
+    }
+
+    void manageProjects() {
+        System.out.println("Managing code modules.");
+    }
+}
+
+class Programmer extends Employee {
+    Programmer(String name, String address, double salary) {
+        super(name, address, salary, "Programmer");
+    }
+
+    void manageProjects() {
+        System.out.println("Working on assigned bugs and features.");
+    }
+}
+
+public class Company {
+    public static void main(String[] args) {
+        Manager m = new Manager("Alice", "NY", 90000);
+        Developer d = new Developer("Bob", "LA", 70000);
+        Programmer p = new Programmer("Charlie", "SF", 60000);
+
+        m.calculateBonus(); m.performanceReport(); m.manageProjects();
+        d.calculateBonus(); d.performanceReport(); d.manageProjects();
+        p.calculateBonus(); p.performanceReport(); p.manageProjects();
+    }
+}
