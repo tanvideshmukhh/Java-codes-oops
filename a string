@@ -1,0 +1,15 @@
+class A {
+    void display(String x) {
+        System.out.println("One");
+    }
+
+    protected void display(String x, String y) {
+        System.out.println("Two");
+    }
+
+    public static void main(String[] args) {
+        A a = new A();
+        a.display("ABC");
+        a.display("PQR", "XYZ");
+    }
+}
