@@ -1,0 +1,53 @@
+class Circle {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+}
+
+class Square {
+    double side;
+
+    Square(double side) {
+        this.side = side;
+    }
+}
+
+class Cube {
+    double side;
+
+    Cube(double side) {
+        this.side = side;
+    }
+}
+
+class AreaCalculator {
+
+    double calculateArea(Circle c) {
+        return Math.PI * c.radius * c.radius;
+    }
+
+    double calculateArea(Square s) {
+        return s.side * s.side;
+    }
+
+    double calculateArea(Cube c) {
+        // Surface area of a cube = 6 * side^2
+        return 6 * c.side * c.side;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5.0);
+        Square square = new Square(4.0);
+        Cube cube = new Cube(3.0);
+
+        AreaCalculator calculator = new AreaCalculator();
+
+        System.out.println("Area of Circle: " + calculator.calculateArea(circle));
+        System.out.println("Area of Square: " + calculator.calculateArea(square));
+        System.out.println("Surface Area of Cube: " + calculator.calculateArea(cube));
+    }
+}
