@@ -1,0 +1,17 @@
+class Car {
+    String brand;
+
+    Car() {
+        brand = "Toyota";
+        System.out.println("Default constructor called");
+    }
+
+    void display() {
+        System.out.println("Brand: " + brand);
+    }
+
+    public static void main(String[] args) {
+        Car c = new Car();
+        c.display();
+    }
+}
