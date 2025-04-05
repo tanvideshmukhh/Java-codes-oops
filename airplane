@@ -1,0 +1,36 @@
+class Airplane {
+    String flightNumber;
+    String destination;
+    String departureTime;
+    boolean isDelayed;
+
+    Airplane(String flightNumber, String destination, String departureTime, boolean isDelayed) {
+        this.flightNumber = flightNumber;
+        this.destination = destination;
+        this.departureTime = departureTime;
+        this.isDelayed = isDelayed;
+    }
+
+    void checkStatus() {
+        System.out.println("Flight " + flightNumber + " to " + destination + " departs at " + departureTime);
+    }
+
+    void checkDelay() {
+        if (isDelayed) {
+            System.out.println("Flight " + flightNumber + " is delayed.");
+        } else {
+            System.out.println("Flight " + flightNumber + " is on time.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Airplane a1 = new Airplane("AI203", "New York", "10:30 AM", false);
+        Airplane a2 = new Airplane("BA101", "London", "12:00 PM", true);
+
+        a1.checkStatus();
+        a1.checkDelay();
+
+        a2.checkStatus();
+        a2.checkDelay();
+    }
+}
