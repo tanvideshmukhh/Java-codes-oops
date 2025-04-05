@@ -1,0 +1,14 @@
+class Test {
+    void show(Object a) {
+        System.out.println("I am an Object");
+    }
+
+    void show(String a) {
+        System.out.println("I am a String");
+    }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.show("SectionB1");
+    }
+}
