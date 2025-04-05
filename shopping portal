@@ -1,0 +1,34 @@
+class OnlineShoppingPortal:
+
+    def checkout(self, amount, promocode=None):
+        if promocode is None:
+            if amount > 1000:
+                discount = 0.30 * amount
+            else:
+                discount = 0.20 * amount
+            final_amount = amount - discount
+            print(f"Prime Customer:\nOriginal Amount: ₹{amount:.2f}\nDiscounted Amount: ₹{final_amount:.2f}")
+        
+        else:
+            if amount < 500:
+                discount = 10
+            elif promocode == "GET10":
+                discount = 0.10 * amount
+            else:
+                discount = 0
+            final_amount = amount - discount
+            print(f"Regular Customer:\nOriginal Amount: ₹{amount:.2f}\nDiscounted Amount: ₹{final_amount:.2f}")
+
+def main():
+    portal = OnlineShoppingPortal()
+    portal.checkout(1200)
+    portal.checkout(800)
+
+    print()
+
+    portal.checkout(450, "GET10")
+    portal.checkout(700, "GET10")
+    portal.checkout(700, "INVALID")
+
+if _name_ == "_main_":
+    main()
