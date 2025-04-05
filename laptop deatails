@@ -1,0 +1,20 @@
+class Laptop {
+    String model;
+    double price;
+
+    Laptop(String model, double price) {
+        this.model = model;
+        this.price = price;
+    }
+
+    void specs() {
+        System.out.println(model + " costs " + price);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Laptop l1 = new Laptop("Dell XPS", 999.99);
+        l1.specs();
+    }
+}
