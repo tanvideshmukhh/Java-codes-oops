@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+class ShapeArea {
+    void calcArea(int side) {
+        System.out.println("Area of square: " + (side * side));
+    }
+
+    void calcArea(int length, int breadth) {
+        System.out.println("Area of rectangle: " + (length * breadth));
+    }
+
+    void calcArea(double base, double height) {
+        System.out.println("Area of triangle: " + (0.5 * base * height));
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ShapeArea sa = new ShapeArea();
+        System.out.println("Choose shape (1: Square, 2: Rectangle, 3: Triangle): ");
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1:
+                System.out.print("Enter side: ");
+                int side = sc.nextInt();
+                sa.calcArea(side);
+                break;
+            case 2:
+                System.out.print("Enter length and breadth: ");
+                int l = sc.nextInt();
+                int b = sc.nextInt();
+                sa.calcArea(l, b);
+                break;
+            case 3:
+                System.out.print("Enter base and height: ");
+                double base = sc.nextDouble();
+                double height = sc.nextDouble();
+                sa.calcArea(base, height);
+                break;
+        }
+        sc.close();
+    }
+}
